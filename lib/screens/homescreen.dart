@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:m/drawer.dart';
+import 'package:m/screens/playlist_screen.dart';
+import 'package:m/screens/screens.dart';
 import '../../models/playlist_model.dart';
 import '../../models/song_model.dart';
 import '../../widgets/widgets.dart';
 import '../widgets/section_header.dart';
+import 'profilescreen.dart';
+
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -26,7 +33,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: const _CustomAppBar(),
-        bottomNavigationBar: const _CustomNavBar(),
+        bottomNavigationBar: _CustomNavBar(),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -157,7 +164,6 @@ class _DiscoverMusic extends StatelessWidget {
     );
   }
 }
-
 class _CustomNavBar extends StatelessWidget {
   const _CustomNavBar({
     Key? key,
@@ -167,27 +173,23 @@ class _CustomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      backgroundColor: Colors.deepPurple.shade800,
+      backgroundColor: Colors.deepPurple.shade400,
       unselectedItemColor: Colors.white,
-      selectedItemColor: Colors.white,
+      selectedItemColor: Colors.deepPurple.shade900,
       showUnselectedLabels: false,
-      showSelectedLabels: false,
+      showSelectedLabels: true,
       items: const [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(Icons.home_outlined),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.favorite_outline),
-          label: 'Favorites',
+          icon: Icon(Icons.music_note_outlined),
+          label: 'Playing',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.play_circle_outline),
-          label: 'Play',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.people_outline),
-          label: 'Profile',
+          icon: Icon(Icons.playlist_add_check),
+          label: 'Playlist',
         ),
       ],
     );
@@ -206,11 +208,17 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       elevation: 0,
       leading: const Icon(Icons.grid_view_rounded),
       actions: [
-        Container(
-          margin: const EdgeInsets.only(right: 20),
-          child: const CircleAvatar(
-            backgroundImage: NetworkImage(
-              'https://images.unsplash.com/photo-1659025435463-a039676b45a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80',
+        GestureDetector(
+          onTap: (){
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => ProfileScreen()));
+          },
+          child: Container(
+            margin: const EdgeInsets.only(right: 20),
+            child: const CircleAvatar(
+              backgroundImage: NetworkImage(
+                'https://images.unsplash.com/photo-1659025435463-a039676b45a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80',
+              ),
             ),
           ),
         ),

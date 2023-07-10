@@ -13,22 +13,34 @@ class Song {
 
   static List<Song> songs = [
     Song(
-      title: 'Glass',
-      description: 'Glass',
-      url: 'assets/music/glass.mp3',
-      coverUrl: 'assets/images/glass.jpg',
+      title: 'Shape of You',
+      description: 'Ed Sheeran',
+      url: 'assets/music/SOY.mp3',
+      coverUrl: 'assets/images/SOY.jpg',
     ),
     Song(
-      title: 'Illusions',
-      description: 'Illusions',
-      url: 'assets/music/illusions.mp3',
-      coverUrl: 'assets/images/illusions.jpg',
+      title: 'Bones',
+      description: 'Imagine Dragons',
+      url: 'assets/music/Bones.mp3',
+      coverUrl: 'assets/images/Bones.jpeg',
     ),
     Song(
-      title: 'Pray',
-      description: 'Pray',
-      url: 'assets/music/pray.mp3',
-      coverUrl: 'assets/images/pray.jpg',
+      title: 'Reminder',
+      description: 'The Weekend',
+      url: 'assets/music/Reminder.mp3',
+      coverUrl: 'assets/images/R.jpeg',
+    ),
+    Song(
+      title: 'Starboy',
+      description: 'The Weekend',
+      url: 'assets/music/Starboy.mp3',
+      coverUrl: 'assets/images/starboy.png',
+    ),
+    Song(
+      title: 'STAY',
+      description: 'Justin Bieber',
+      url: 'assets/music/Stay.mp3',
+      coverUrl: 'assets/images/stay.jpg',
     )
   ];
 }

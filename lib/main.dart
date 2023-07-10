@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:m/screens/homescreen.dart';
-//import 'package:musicplayer/screens/splash_screen.dart';
-//import 'screens/screens.dart';
+import 'package:m/screens/playlist_screen.dart';
+import 'screens/screens.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,12 +22,13 @@ class MyApp extends StatelessWidget {
           displayColor: Colors.white,
         ),
       ),
-      home: HomeScreen(),
+      home: signupscreen(),
       getPages: [
         GetPage(name: '/', page: () => const HomeScreen()),
-        //GetPage(name: '/song', page: () => const SongScreen()),
-        //GetPage(name: '/playlist', page: () => const PlaylistScreen()),
+        GetPage(name: '/song', page: () => const SongScreen()),
+        GetPage(name: '/playlist', page: () => const PlaylistScreen()),
       ],
     );
   }
 }
+
